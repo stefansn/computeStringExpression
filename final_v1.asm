@@ -20,7 +20,7 @@ public start
 	array dd 40 dup (?)
 	numar_format dd 0
 	putere db 0 
-	eroare db "eroare",13,10,0 
+	eroare db "error",13,10,0 
 	zece db 10
 	cod_exit db "exit",0
 	rezultat_anterior dd 0
@@ -55,7 +55,7 @@ start:
 		add esp,4
 		
 		mov ecx,eax
-		mov lungime_sir,cl ;lungimea expresiei citite
+		mov lungime_sir,cl ;length of the string expression
 	
 		xor edx,edx
 		mov esi,0
@@ -71,7 +71,7 @@ start:
 			cmp bl,'9'
 			ja is_operator
 			
-			to_number:				;aici formez numerele, ex: 123 : 1+0*10   ->   2+1*10    >    3+12*10 = 123
+			to_number:				; ex: 123 : 1+0*10   ->   2+1*10    >    3+12*10 = 123
 				mov ebx,0
 				mov bl,expresie[esi]		
 				
@@ -111,7 +111,7 @@ start:
 		
 		jmp parcurgere_expresie
 		
-		efectuare_inmultire: ;am numarul din stanga, stiu ca urmeaza dupa acesta *, nevoie deci de numarul din dreapta
+		efectuare_inmultire: ; I have the number from the left, next I need the number on the right 
 			
 			mov eax,0
 			to_number1:
@@ -159,7 +159,7 @@ start:
 		jmp parcurgere_expresie
 	
 
-;################## aici calcul + - in stiva #############################	
+;################## Here I evaluate +,- in the stack #############################	
 		parcurgere_stack:
 		push eax
 		push '='
