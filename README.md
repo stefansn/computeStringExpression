@@ -10,11 +10,11 @@ Also, I have not implemented yet support for "*x=" or "/x=" string expressions.
 
   these are examples:
 
-  -> 2+3=
-  -> 2-3=
-  -> 2*3+1=
-  -> 6/3+1=
-  -> +2=
-  -> -2=
+		-> 2+3=
+		-> 2-3=
+		-> 2*3+1=
+		-> 6/3+1=
+		-> +2=
+		-> -2=
 
  
